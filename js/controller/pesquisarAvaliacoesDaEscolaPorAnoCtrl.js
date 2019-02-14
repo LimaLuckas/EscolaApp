@@ -1,6 +1,6 @@
 var pesquisarAvaliacoesDaEscolaPorAnoCtrl = function($scope, $stateParams, $mdToast, escolaApi){
     
-    $scope.avaliacoes = {};
+    $scope.avaliacoes = [];
     $scope.ano = $stateParams.ano;
     $scope.codEscola = $stateParams.codEscola;
     
@@ -43,4 +43,4 @@ var pesquisarAvaliacoesDaEscolaPorAnoCtrl = function($scope, $stateParams, $mdTo
     
 };
 
-escolaApi.controller("PesquisarAvaliacoesDaEcolaPorAnoCtrl", pesquisarAvaliacoesDaEscolaPorAnoCtrl);
+escolaApp.controller("PesquisarAvaliacoesDaEcolaPorAnoCtrl", pesquisarAvaliacoesDaEscolaPorAnoCtrl);

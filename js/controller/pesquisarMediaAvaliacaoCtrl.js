@@ -40,4 +40,4 @@ var pesquisarMediaAvaliacaoCtrl = function($scope, $stateParams, $mdToast, escol
     
 };
 
-escolaApi.controller("PesquisarMediaAvaliacaoCtrl", pesquisarMediaAvaliacaoCtrl);
+escolaApp.controller("PesquisarMediaAvaliacaoCtrl", pesquisarMediaAvaliacaoCtrl);

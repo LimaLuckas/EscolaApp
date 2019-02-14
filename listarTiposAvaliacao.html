@@ -1,13 +1,7 @@
 <main>
-    <form ng-controller="listarTiposAvaliacaoCtrl">
+    <form>
         <!-- Campo do formulário -->
-        <div class="box">
-            <div class="form-group">
-                <input class="form-control"
-                       type="text" 
-                       ng-model="nome" 
-                       placeholder="Nome do Tipo da Avaliação">
-            </div>            
+        <div class="box">  
             <button type="button"
                     class="btn btn-primary btn-lg btn-block"
                     ng-click="listarTiposAvaliacao(nome)">
@@ -28,17 +22,7 @@
                     <tr ng-repeat="tipoAvaliacao in tiposAvaliacao">
                         <td scope="row">{{tipoAvaliacao.cod}}</td>
                         <td scope="row">{{tipoAvaliacao.nome}}</td>
-                        <td md-cell>
-                            <!-- Redirecionar para a página de escola por código: escolaPorCodigo -->
-                            <md-button aria-label="Detalhar"
-                              ui-sref="pesquisarEscola({codEscola: escola.codEscola})"
-                              ui-sref-opts="{reload: true}">
-                                <ng-md-icon icon="details" size="18"></ng-md-icon>
-                                <md-tooltip md-direction="bottom">
-                                    Detalhar
-                                </md-tooltip>
-                            </md-button>
-                        </td>
+                        
                     </tr>
                 </tbody>
             </table>

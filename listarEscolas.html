@@ -1,5 +1,5 @@
 <main>
-    <form ng-controller="listarEscolasCtrl">
+    <form>
         <!-- Campo do formulário -->
         <div class="box">
             <div class="form-group">
@@ -9,8 +9,14 @@
                 <select class="form-control" nome="quantidade"
                   ng-model="quantidade"
                   ng-options="quantidade for quantidade in quantidades">
-          				<option value="">Selecione uma quantidade de Escolas</option>
-          			</select>
+          		        <option value="">Selecione uma quantidade de Escolas</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+          		</select>
             </div>
             <button type="button"
                     class="btn btn-primary btn-lg btn-block"

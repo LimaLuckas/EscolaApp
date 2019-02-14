@@ -46,4 +46,4 @@ var pesquisarAvaliacoesDaEscolaPorAnoETipoCtrl = function($scope, $stateParams, 
     
 };
 
-escolaApi.controller("PesquisarAvaliacoesDaEcolaPorAnoETipoCtrl", pesquisarAvaliacoesDaEscolaPorAnoETipoCtrl);
+escolaApp.controller("PesquisarAvaliacoesDaEcolaPorAnoETipoCtrl", pesquisarAvaliacoesDaEscolaPorAnoETipoCtrl);

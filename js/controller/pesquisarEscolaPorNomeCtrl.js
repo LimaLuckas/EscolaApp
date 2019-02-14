@@ -2,7 +2,7 @@
 
 var pesquisarEscolaPorNomeCtrl = function($scope, $stateParams, $mdToast, escolaApi){
     
-    $scope.escola = {};
+    $scope.escola = [];
     $scope.nome = $stateParams.nome;
     
     $scope.pesquisarEscola = function(nome){
@@ -29,7 +29,7 @@ var pesquisarEscolaPorNomeCtrl = function($scope, $stateParams, $mdToast, escola
                     .toastClass('my-error');
                 $mdToast.show(toast);
 
-                console.error(error);
+                console.error(error); 
         });
     }
     

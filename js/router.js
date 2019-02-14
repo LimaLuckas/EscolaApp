@@ -28,28 +28,30 @@ escolaApp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'pesquisarEscolaPorNome.html',
             controller: 'PesquisarEscolaPorNomeCtrl'
         })
-        .state("AvaliacoesDaEscola", {
+        .state("avaliacoesDaEscola", {
             url: '/escolas/:codEscola/avaliacoes',
             templateUrl: 'pesquisarAvaliacoesDaEscola.html',
             controller: 'PesquisarAvaliacoesDaEscolaCtrl'
         })
-        .state("AvaliacoesDaEscolaPorAno", {
+        .state("avaliacoesDaEscolaPorAno", {
             url: '/escolas/:codEscola/avaliacoes/ano/:ano',
             templateUrl: 'pesquisarAvaliacoesDaEscolaPorAno.html',
             controller: 'PesquisarAvaliacoesDaEscolaPorAnoCtrl'
         })
-        .state("MediaAvaliacoes", {
+        .state("mediaAvaliacoes", {
             url: '/escolas/:codEscola/avaliacoes/media',
             templateUrl: "pesquisarMediaAvaliacoes.html",
             controller: 'PesquisarMediaAvaliacaoCtrl'
         })
-        .state("MediaAvaliacoesPorAno", {
+        .state("mediaAvaliacoesPorAno", {
             url: '/escolas/:codEscola/avaliacoes/ano/:ano/media',
             templateUrl: "pesquisarMediaAvaliacoesPorAno.html",
             controller: "PesquisarMediaAvaliacaoPorAnoCtrl"
         })
-        .state("AvaliacoesDaEscolaPorAnoETipo", {
+        .state("avaliacoesDaEscolaPorAnoETipo", {
             url: '/escolas/:codEscola/avaliacoes/ano/:ano/tipo/:tipo',
             templateUrl: 'pesquisarAvaliacoesPorAnoEtipo.html',
             controller: 'PesquisarAvaliacoesPorAnoETipoCtrl'
+        });
+           
 });

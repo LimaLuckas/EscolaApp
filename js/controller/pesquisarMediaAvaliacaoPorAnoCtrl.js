@@ -42,4 +42,4 @@ var pesquisarMediaAvaliacaoPorAnoCtrl = function($scope, $stateParams, $mdToast,
     
 };
 
-escolaApi.controller("PesquisarMediaAvaliacaoPorAnoCtrl", pesquisarMediaAvaliacaoPorAnoCtrl);
+escolaApp.controller("PesquisarMediaAvaliacaoPorAnoCtrl", pesquisarMediaAvaliacaoPorAnoCtrl);

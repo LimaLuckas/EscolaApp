@@ -1,7 +1,7 @@
 //Controller - pesquisar avaliacoes da escola
 
 var pesquisarAvaliacoesDaEscolaCtrl = function($scope, $stateParams, $mdToast, escolaApi){
-    $scope.avaliacoes = {};
+    $scope.avaliacoes = [];
     $scope.codEscola = $stateParams.codEscola;
     
     $scope.pesquisarAvaliacoes = function(codEscola){
@@ -41,4 +41,4 @@ var pesquisarAvaliacoesDaEscolaCtrl = function($scope, $stateParams, $mdToast, e
     
 };
 
-escolaApi.controller("PesquisarAvaliacoesDaEcolaCtrl", pesquisarAvaliacoesDaEscolaCtrl);
+escolaApp.controller("PesquisarAvaliacoesDaEcolaCtrl", pesquisarAvaliacoesDaEscolaCtrl);
