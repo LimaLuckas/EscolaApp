@@ -1,26 +1,27 @@
-var pesquisarMediaAvaliacaoCtrl = function($scope, $stateParams, $mdToast, escolaApi){
+var pesquisarAvaliacoesDaEscolaPorAnoCtrl = function($scope, $stateParams, $mdToast, escolaApi){
     
-    $scope.medias = {};
+    $scope.avaliacoes = {};
+    $scope.ano = $stateParams.ano;
     $scope.codEscola = $stateParams.codEscola;
     
-    var pesquisarAvaliacoes= function(codEscola){
-        escolaApi.getMediaAvaliacoes(codEscola)
+    $scope.pesquisarAvaliacoes= function(codEscola, ano){
+        escolaApi.getAvaliacoesDaEscolaPorAno(codEscola, ano)
             .then(function(response){
             
                 //Toast
                 var toast = $mdToast.simple()
-                    .textContent('As medias das avaliacoes da escola no respectivo ano foram listadas abaixo.')
+                    .textContent('As avaliacoes da escola no respectivo ano foram listadas abaixo.')
                     .position('top right')
                     .action('OK')
                     .hideDelay(6000)
                     .toastClass('my-success');
                 $mdToast.show(toast);
             
-                $scope.medias = response.data;
+                $scope.avaliacoes = response.data;
         })
             .catch(function (error) {
                 var toast = $mdToast.simple()
-                    .textContent('Algum problema ocorreu na solicitação das medias avaliativas da escola.')
+                    .textContent('Algum problema ocorreu na solicitação das avaliacoes da escola.')
                     .position('top right')
                     .action('OK')
                     .hideDelay(6000)
@@ -33,11 +34,13 @@ var pesquisarMediaAvaliacaoCtrl = function($scope, $stateParams, $mdToast, escol
     
     let inicializarEscola = function(){
         var codEscola = $stateParams.codEscola;
+        var ano = $stateParams.ano;
         console.log(codEscola);
+        console.log(ano);
     }
     
     inicializarEscola();
     
 };
 
-escolaApi.controller("PesquisarMediaAvaliacaoCtrl", pesquisarMediaAvaliacaoCtrl);
+escolaApi.controller("PesquisarAvaliacoesDaEcolaPorAnoCtrl", pesquisarAvaliacoesDaEscolaPorAnoCtrl);

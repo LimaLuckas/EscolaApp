@@ -4,7 +4,7 @@ var listarEscolasCtrl = function ($scope, $mdToast, escolaApi) {
     $scope.escolas = [];
     $scope.quantidades = [10, 20, 30, 40, 50, 100];
 
-    $scope.listarEscola = function (quantidade) {
+    $scope.listarEscolas = function (quantidade) {
 
         escolaApi.getEscolas(quantidade)
             .then(function (response) {

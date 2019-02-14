@@ -4,7 +4,7 @@ var pesquisarAvaliacoesDaEscolaCtrl = function($scope, $stateParams, $mdToast, e
     $scope.avaliacoes = {};
     $scope.codEscola = $stateParams.codEscola;
     
-    var pesquisarAvaliacoes= function(codEscola){
+    $scope.pesquisarAvaliacoes = function(codEscola){
         escolaApi.getAvaliacoesDaEscola(codEscola)
             .then(function(response){
             

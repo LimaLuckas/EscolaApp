@@ -1,0 +1,57 @@
+<main>
+    <form ng-controller="PesquisarMediaAvaliacaoPorAnoCtrl">
+      <div class="box">
+          <div class="form-group">
+              <label for="nome">
+                  nome:
+              </label>
+              <input class="form-control" type="text" name="codEscola"
+                ng-model="codEscola" />
+              
+              <label for="ano">
+                Ano:
+              </label>
+              <input class="form-control" type="text" name="ano">
+          </div>
+
+          <button type="button" class="btn btn-primary btn-lg btn-block"
+            ng-click="pesquisarAvaliacoes(codEscola, ano)">
+              Pesquisar
+          </button>
+      </div>
+
+      <!-- Tabela da Escola -->
+      <div class="box">
+          <table class="table table-hover">
+              <thead class="thead-light">
+                  <tr>
+                      <th scope="col">Código</th>
+                      <th scope="col">Nome</th>
+                      <th scope="col">Avaliacao</th>
+                      <th scope="col">Ano</th>
+                      <th scope="col">Opções</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td scope="row">{{escola.codEscola}}</td>
+                      <td scope="row">{{escola.nome}}</td>
+                      <td scope="row">{{escola.avaliacoes}}</td>
+                      <td scope="row">{{escola.ano}}</td>
+                      <td md-cell>
+                            <!-- Redirecionar para a página de escola por código: escolaPorCodigo -->
+                            <md-button aria-label="Detalhar"
+                              ui-sref="pesquisarEscola({codEscola: escola.codEscola})"
+                              ui-sref-opts="{reload: true}">
+                                <ng-md-icon icon="details" size="18"></ng-md-icon>
+                                <md-tooltip md-direction="bottom">
+                                    Detalhar
+                                </md-tooltip>
+                            </md-button>
+                        </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+    </form>
+</main>

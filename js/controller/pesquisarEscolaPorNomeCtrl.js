@@ -5,7 +5,7 @@ var pesquisarEscolaPorNomeCtrl = function($scope, $stateParams, $mdToast, escola
     $scope.escola = {};
     $scope.nome = $stateParams.nome;
     
-    var pesquisarEscola= function(nome){
+    $scope.pesquisarEscola = function(nome){
         escolaApi.getEscolaPorNome(nome)
             .then(function(response){
             

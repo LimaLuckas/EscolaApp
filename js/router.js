@@ -53,4 +53,3 @@ escolaApp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'pesquisarAvaliacoesPorAnoEtipo.html',
             controller: 'PesquisarAvaliacoesPorAnoETipoCtrl'
 });
-

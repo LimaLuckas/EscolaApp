@@ -1,11 +1,10 @@
-var pesquisarMediaAvaliacaoPorAnoCtrl = function($scope, $stateParams, $mdToast, escolaApi){
+var pesquisarMediaAvaliacaoCtrl = function($scope, $stateParams, $mdToast, escolaApi){
     
     $scope.medias = {};
-    $scope.ano = $stateParams.ano;
     $scope.codEscola = $stateParams.codEscola;
     
-    var pesquisarAvaliacoes= function(codEscola, ano){
-        escolaApi.getMediaAvaliacoesPorAno(codEscola, ano)
+    $scope.pesquisarAvaliacoes = function(codEscola){
+        escolaApi.getMediaAvaliacoes(codEscola)
             .then(function(response){
             
                 //Toast
@@ -34,12 +33,11 @@ var pesquisarMediaAvaliacaoPorAnoCtrl = function($scope, $stateParams, $mdToast,
     
     let inicializarEscola = function(){
         var codEscola = $stateParams.codEscola;
-        var ano = $stateParams.ano;
-        console.log(codEscola,ano);
+        console.log(codEscola);
     }
     
     inicializarEscola();
     
 };
 
-escolaApi.controller("PesquisarMediaAvaliacaoPorAnoCtrl", pesquisarMediaAvaliacaoPorAnoCtrl);
+escolaApi.controller("PesquisarMediaAvaliacaoCtrl", pesquisarMediaAvaliacaoCtrl);

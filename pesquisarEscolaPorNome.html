@@ -1,9 +1,9 @@
 <main>
     <form ng-controller="PesquisarEscolaPorNomeCtrl">
-        <div class="box">
+      <div class="box">
           <div class="form-group">
               <label for="nome">
-                  Nome:
+                  nome:
               </label>
               <input class="form-control" type="text" name="nome"
                 ng-model="nome" />
@@ -25,7 +25,6 @@
                       <th scope="col">Rede</th>
                       <th scope="col">E-mail</th>
                       <th scope="col">Categoria</th>
-                      <th scope="col">Opcoes</th>
                   </tr>
               </thead>
               <tbody>
@@ -35,20 +34,9 @@
                       <td scope="row">{{escola.rede}}</td>
                       <td scope="row">{{escola.email}}</td>
                       <td scope="row">{{escola.categoriaEscolaPrivada}}</td>
-                      <td md-cell>
-                          <!-- Redirecionar para a página de escola por código: escolaPorCodigo -->
-                            <md-button aria-label="Detalhar"
-                                ui-sref="pesquisarEscola({codEscola: escola.codEscola})"
-                                ui-sref-opts="{reload: true}">
-                                    <ng-md-icon icon="details" size="18"></ng-md-icon>
-                                    <md-tooltip md-direction="bottom">
-                                        Detalhar
-                                </md-tooltip>
-                            </md-button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
     </form>
 </main>

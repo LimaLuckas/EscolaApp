@@ -1,16 +1,17 @@
-var pesquisarAvaliacoesDaEscolaPorAnoCtrl = function($scope, $stateParams, $mdToast, escolaApi){
+var pesquisarAvaliacoesDaEscolaPorAnoETipoCtrl = function($scope, $stateParams, $mdToast, escolaApi){
     
     $scope.avaliacoes = {};
     $scope.ano = $stateParams.ano;
     $scope.codEscola = $stateParams.codEscola;
+    $scope.tipo = $stateParams.tipo;
     
-    var pesquisarAvaliacoes= function(codEscola, ano){
-        escolaApi.getAvaliacoesDaEscolaPorAno(codEscola, ano)
+    $scope.pesquisarAvaliacoes= function(codEscola, ano, tipo){
+        escolaApi.getAvaliacoesDaEscolaPorCodigoAnoETipo(codEscola, ano, tipo)
             .then(function(response){
             
                 //Toast
                 var toast = $mdToast.simple()
-                    .textContent('As avaliacoes da escola no respectivo ano foram listadas abaixo.')
+                    .textContent('As avaliacoes da escola do respectivo ano e tipo foram listadas abaixo.')
                     .position('top right')
                     .action('OK')
                     .hideDelay(6000)
@@ -35,11 +36,14 @@ var pesquisarAvaliacoesDaEscolaPorAnoCtrl = function($scope, $stateParams, $mdTo
     let inicializarEscola = function(){
         var codEscola = $stateParams.codEscola;
         var ano = $stateParams.ano;
-        console.log(codEscola,ano);
+        var tipo = $stateParams.tipo;
+        console.log(codEscola);
+        console.log(ano);
+        console.log(tipo);
     }
     
     inicializarEscola();
     
 };
 
-escolaApi.controller("PesquisarAvaliacoesDaEcolaPorAnoCtrl", pesquisarAvaliacoesDaEscolaPorAnoCtrl);
+escolaApi.controller("PesquisarAvaliacoesDaEcolaPorAnoETipoCtrl", pesquisarAvaliacoesDaEscolaPorAnoETipoCtrl);

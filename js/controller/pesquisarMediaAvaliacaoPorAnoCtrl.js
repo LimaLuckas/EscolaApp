@@ -1,28 +1,27 @@
-var pesquisarAvaliacoesDaEscolaPorAnoETipoCtrl = function($scope, $stateParams, $mdToast, escolaApi){
+var pesquisarMediaAvaliacaoPorAnoCtrl = function($scope, $stateParams, $mdToast, escolaApi){
     
-    $scope.avaliacoes = {};
+    $scope.medias = {};
     $scope.ano = $stateParams.ano;
     $scope.codEscola = $stateParams.codEscola;
-    $scope.tipo = $stateParams.tipo;
     
-    var pesquisarAvaliacoes= function(codEscola, ano, tipo){
-        escolaApi.getAvaliacoesDaEscolaPorAno(codEscola, ano, tipo)
+    $scope.pesquisarAvaliacoes= function(codEscola, ano){
+        escolaApi.getMediaAvaliacoesPorAno(codEscola, ano)
             .then(function(response){
             
                 //Toast
                 var toast = $mdToast.simple()
-                    .textContent('As avaliacoes da escola do respectivo ano e tipo foram listadas abaixo.')
+                    .textContent('As medias das avaliacoes da escola no respectivo ano foram listadas abaixo.')
                     .position('top right')
                     .action('OK')
                     .hideDelay(6000)
                     .toastClass('my-success');
                 $mdToast.show(toast);
             
-                $scope.avaliacoes = response.data;
+                $scope.medias = response.data;
         })
             .catch(function (error) {
                 var toast = $mdToast.simple()
-                    .textContent('Algum problema ocorreu na solicitação das avaliacoes da escola.')
+                    .textContent('Algum problema ocorreu na solicitação das medias avaliativas da escola.')
                     .position('top right')
                     .action('OK')
                     .hideDelay(6000)
@@ -36,12 +35,11 @@ var pesquisarAvaliacoesDaEscolaPorAnoETipoCtrl = function($scope, $stateParams, 
     let inicializarEscola = function(){
         var codEscola = $stateParams.codEscola;
         var ano = $stateParams.ano;
-        var tipo = $stateParams.tipo;
-        console.log(codEscola,ano,tipo);
+        console.log(codEscola,ano);
     }
     
     inicializarEscola();
     
 };
 
-escolaApi.controller("PesquisarAvaliacoesDaEcolaPorAnoETipoCtrl", pesquisarAvaliacoesDaEscolaPorAnoETipoCtrl);
+escolaApi.controller("PesquisarMediaAvaliacaoPorAnoCtrl", pesquisarMediaAvaliacaoPorAnoCtrl);
